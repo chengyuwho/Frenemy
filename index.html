@@ -1,37 +1,34 @@
 <!DOCTYPE html>
-<html >
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Quickdraw Visualizer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" href="css/w3.css">
-  <link rel="stylesheet" href="css/style.css">
+  <title>CodePen - Number System Convetor</title>
+  <link rel="stylesheet" href="./style.css">
 
 </head>
-
 <body>
- 
-  <div id="wrapper">
-   
-  
-  
-  <div id="plot"></div><br>
-    <canvas id="canvas" resize></canvas>
-    
-  
+<!-- partial:index.partial.html -->
+<div id="app">
+  <div class="row">
+    <label for="decimal">Decimal</label>
+    <input id="decimal" type="text" v-model.trim="decNum" @input="currInput='dec'" pattern="[0-9]+(.[0-9]+)?"/>
   </div>
-
-  <!-- Trigger/Open The Modal  -->
-  <button class="w3-btn w3-ripple w3-green" id="btnInfo" onclick="callDrawing()">這是什麼</button> 
-<button class="w3-btn w3-ripple w3-red" id="btnClear" onclick="clearDrawing()">重畫一次</button>
-
-
-  <script src='js/paper-0.9.25.min.js'></script>
-  <script src='js/highcharts-5.0.4.min.js'></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/drawing.js"></script>
+  <div class="row">
+    <label for="binary">Binary</label>
+    <input id="binary" type="text" v-model.trim="binNum" @input="currInput='bin'" pattern="[0-1]+(.[0-1]+)?"/>
+  </div>
+  <div class="row">
+    <label for="octal">Octal</label>
+    <input id="octal" type="text" v-model.trim="octalNum" @input="currInput='octal'" pattern="[0-7]+(.[0-7]+)?"/>
+  </div>
+  <div class="row">
+    <label for="hex">Hex</label>
+    <input id="hex" type="text" v-model.trim="hexNum" @input="currInput='hex'" pattern="[A-Fa-f0-9]+(.[A-Fa-f0-9]+)?"/>
+  </div>
+  <div class="btnClear" @click="clear">clear</div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js'></script><script  src="./script.js"></script>
 
 </body>
 </html>
